@@ -1,0 +1,9 @@
+// Rule Name   : Suspicious Local Admin Account Creation
+// MITRE ATT&CK: T1136 - Create Account
+// Event ID    : 4720 - User Account Created
+//               4732 - User Added to Local Admin Group
+
+SecurityEvent
+| where EventID in (4720, 4732)
+| project TimeGenerated, Computer, Account, Activity, TargetAccount, SubjectAccount
+| sort by TimeGenerated desc
