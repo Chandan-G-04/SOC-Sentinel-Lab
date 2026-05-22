@@ -224,6 +224,16 @@ Incident marked as resolved with notes documenting the finding.
 
 ---
 
+## What I Learned
+
+- How to architect a cloud SIEM from scratch using Azure native tools
+- Writing KQL detection logic for real-world attack techniques
+- The difference between noisy rules and high-fidelity detections
+- How to triage alerts and classify True Positive vs False Positive
+- Mapping detections to MITRE ATT&CK to communicate threat context clearly
+
+---
+
 ## Author
 
 Chandan G
