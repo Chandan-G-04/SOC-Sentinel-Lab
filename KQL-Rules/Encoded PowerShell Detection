@@ -1,0 +1,9 @@
+// Rule Name   : Encoded PowerShell Detection
+// MITRE ATT&CK: T1059.001 - PowerShell
+// Event ID    : 4688 - Process Creation
+
+SecurityEvent
+| where EventID == 4688
+| where NewProcessName has "powershell"
+| where CommandLine has "-enc"
+| project TimeGenerated, Computer, SubjectAccount, CommandLine, ParentProcessName
