@@ -1,0 +1,15 @@
+// Rule Name   : Suspicious Parent Process Spawning PowerShell
+// MITRE ATT&CK: T1059.001 - PowerShell
+// Event ID    : 4688 - Process Creation
+
+SecurityEvent
+| where EventID == 4688
+| where NewProcessName has "powershell.exe"
+| where ParentProcessName has_any (
+    "cmd.exe",
+    "wscript.exe",
+    "cscript.exe",
+    "mshta.exe"
+)
+| project TimeGenerated, Computer, SubjectAccount, ParentProcessName, NewProcessName, CommandLine
+| sort by TimeGenerated desc
