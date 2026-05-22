@@ -99,10 +99,10 @@ Microsoft Sentinel
 - KQL Rule: [registry-persistence.kql](./KQL-Rules/registry-persistence.kql)
 
 ### Rule Overview
-![image](Screenshots/registry-persistance-general.png)
+![image](Screenshots/registry-persistence-general.png)
 
 ### Detection Query
-![image](Screenshots/registry-persistance-query.png)
+![image](Screenshots/registry-persistence-query.png)
 
 ---
 
