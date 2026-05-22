@@ -1,0 +1,9 @@
+// Rule Name   : Ransomware Shadow Copy Deletion Detection
+// MITRE ATT&CK: T1490 - Inhibit System Recovery
+// Event ID    : 1 - Sysmon Process Creation
+
+Event
+| where EventID == 1
+| where RenderedDescription contains "vssadmin"
+| where RenderedDescription contains "delete"
+| where RenderedDescription contains "shadows"
