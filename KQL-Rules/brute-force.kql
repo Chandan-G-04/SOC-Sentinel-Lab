@@ -1,0 +1,8 @@
+// Rule Name   : Brute Force Detection
+// MITRE ATT&CK: T1110 - Brute Force
+// Event ID    : 4625 - Failed Logon
+
+SecurityEvent
+| where EventID == "4625"
+| summarize FailedAttempts = count() by Account, Computer, bin(TimeGenerated, 5m)
+| where FailedAttempts >= 3
