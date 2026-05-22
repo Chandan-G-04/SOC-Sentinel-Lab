@@ -1,0 +1,13 @@
+// Rule Name   : LOLBins Execution Detection
+// MITRE ATT&CK: T1218 - System Binary Proxy Execution
+// Event ID    : 4688 - Process Creation
+
+SecurityEvent
+| where EventID == 4688
+| where NewProcessName has_any (
+    "certutil.exe",
+    "bitsadmin.exe",
+    "rundll32.exe",
+    "mshta.exe"
+)
+| project TimeGenerated, Computer, SubjectAccount, NewProcessName, CommandLine, ParentProcessName
