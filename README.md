@@ -61,10 +61,10 @@ The project includes multiple detection use cases mapped with the MITRE ATT&CK F
 - MITRE Technique: T1547
 
 ### Rule Overview
-![image](Screenshots/registry-persistence-general.png)
+![image](Screenshots/registry-persistance-general.png)
 
 ### Detection Query
-![image](Screenshots/registry-persistence-query.png)
+![image](Screenshots/registry-persistance-query.png)
 
 ---
 
