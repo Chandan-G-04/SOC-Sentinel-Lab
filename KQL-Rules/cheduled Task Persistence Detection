@@ -1,0 +1,7 @@
+// Rule Name   : Scheduled Task Persistence Detection
+// MITRE ATT&CK: T1053 - Scheduled Task/Job
+// Event ID    : 4698 - Scheduled Task Created
+
+SecurityEvent
+| where EventID == 4698
+| project TimeGenerated, Account, Computer, Activity
