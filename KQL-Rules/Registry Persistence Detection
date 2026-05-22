@@ -1,0 +1,7 @@
+// Rule Name   : Registry Persistence Detection
+// MITRE ATT&CK: T1547 - Boot or Logon Autostart Execution
+// Event ID    : 13 - Sysmon Registry Value Set
+
+Event
+| where EventID == 13
+| where RenderedDescription contains @"CurrentVersion\Run"
